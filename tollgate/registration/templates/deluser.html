@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+.fixed_header{
+    width: 80%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+.fixed_header tbody{
+  display:block;
+  width: 100%;
+  overflow: auto;
+  height: 100px;
+}
+
+.fixed_header thead tr {
+   display: block;
+}
+
+.fixed_header thead {
+  background: black;
+  color:#fff;
+}
+
+.fixed_header th, .fixed_header td {
+  padding: 5px;
+  text-align: center;
+  width: 295px;
+}
+table{
+background-color: transperent;
+}
+ html,
+body{
+  height:100%;
+  overflow:hidden;
+}
+
+body{
+  background:rgba(52, 152, 219, 0.5);
+  background: -webkit-linear-gradient(top, rgba(52, 152, 219, 0.5) 60%,rgba(250, 252, 219, 0.5) 100%);
+  background: -moz-linear-gradient(top, rgba(52, 152, 219, 0.5) 60%,rgba(250, 252, 219, 0.5) 100%);
+}
+
+.car,
+.car:before,
+.car:after{
+  position:absolute;
+}
+
+.car{
+  background:rgb(230, 126, 34);
+  border-radius:100%;
+  box-shadow:
+
+     /* ruedas */
+
+    5px 12px 0 5px rgb(189, 195, 199), /* izquierda */
+    30px 11px 0 5px rgb(189, 195, 199),
+    5px 12px 0 8px rgb(52, 73, 94), /* izquierda */
+    30px 11px 0 8px rgb(52, 73, 94),
+
+    /* ventana */
+
+    14px -11px 0 5px rgb(236, 240, 241),
+    27px -11px 0 5px rgb(236, 240, 241),
+
+    /* chasis */
+
+    0 -1px 0 10px rgb(230, 126, 34),
+    5px -1px 0 10px rgb(230, 126, 34),
+    10px -1px 0 10px rgb(230, 126, 34),
+    15px -1px 0 10px rgb(230, 126, 34),
+    20px -1px 0 10px rgb(230, 126, 34),
+    25px -1px 0 10px rgb(230, 126, 34),
+    30px -1px 0 10px rgb(230, 126, 34),
+
+    /* techo */
+
+    15px -11px 0 10px rgb(230, 126, 34),
+    20px -11px 0 10px rgb(230, 126, 34),
+    26px -11px 0 10px rgb(230, 126, 34);
+
+  /* El width y el height del div deben ser inferiores al tamaño total del box-shadow, de esa manera controlaremos distintas variantes de tamaños.*/
+
+  width:2px; height:2px;
+  left:50%; top:50%;
+  margin-left:-15px; margin-top:-30px;
+  animation:simulacion 1s linear infinite;
+}
+
+@keyframes simulacion{
+  25%, 75%{
+  box-shadow:
+
+     /* ruedas */
+
+    5px 7px 0 5px rgb(189, 195, 199), /* izquierda */
+    30px 8px 0 5px rgb(189, 195, 199),
+    5px 7px 0 8px rgb(52, 73, 94), /* izquierda */
+    30px 8px 0 8px rgb(52, 73, 94),
+
+    /* ventana */
+
+    14px -9px 0 5px rgb(236, 240, 241),
+    27px -9px 0 5px rgb(236, 240, 241),
+
+    /* chasis */
+
+    0 1px 0 10px rgb(230, 126, 34),
+    5px 1px 0 10px rgb(230, 126, 34),
+    10px 1px 0 10px rgb(230, 126, 34),
+    15px 1px 0 10px rgb(230, 126, 34),
+    20px 1px 0 10px rgb(230, 126, 34),
+    25px 1px 0 10px rgb(230, 126, 34),
+    30px 1px 0 10px rgb(230, 126, 34),
+
+    /* techo */
+
+    15px -9px 0 10px rgb(230, 126, 34),
+    20px -9px 0 10px rgb(230, 126, 34),
+    26px -9px 0 10px rgb(230, 126, 34);
+  }
+  50%, 100%{
+   box-shadow:
+
+     /* ruedas */
+
+    5px 12px 0 5px rgb(189, 195, 199), /* izquierda */
+    30px 11px 0 5px rgb(189, 195, 199),
+    5px 12px 0 8px rgb(52, 73, 94), /* izquierda */
+    30px 11px 0 8px rgb(52, 73, 94),
+
+    /* ventana */
+
+    14px -11px 0 5px rgb(236, 240, 241),
+    27px -11px 0 5px rgb(236, 240, 241),
+
+    /* chasis */
+
+    0 -1px 0 10px rgb(230, 126, 34),
+    5px -1px 0 10px rgb(230, 126, 34),
+    10px -1px 0 10px rgb(230, 126, 34),
+    15px -1px 0 10px rgb(230, 126, 34),
+    20px -1px 0 10px rgb(230, 126, 34),
+    25px -1px 0 10px rgb(230, 126, 34),
+    30px -1px 0 10px rgb(230, 126, 34),
+
+    /* techo */
+
+    15px -11px 0 10px rgb(230, 126, 34),
+    20px -11px 0 10px rgb(230, 126, 34),
+    26px -11px 0 10px rgb(230, 126, 34);
+  }
+}
+
+.car:before,
+.car:after{
+  content:"";
+}
+
+.car:before{
+  background:rgba(236, 240, 241, 0);
+  border-radius:100%;
+  box-shadow:
+
+    /* nubes */
+
+    -80px 60px 10px 5px rgba(236, 240, 241, 0.5),
+    -60px 50px 10px 10px rgba(236, 240, 241, 0.5),
+    -30px 60px 10px 15px rgba(236, 240, 241, 0.9),
+    -10px 60px 10px 20px rgba(255, 255, 255, 0.8),
+
+    110px 50px 10px 5px rgba(236, 240, 241, 0.5),
+    90px 60px 10px 10px rgba(236, 245, 245, 0.8),
+    70px 50px 10px 15px rgba(236, 240, 241, 0.5),
+    50px 60px 10px 20px rgba(236, 240, 241, 0.8);
+
+  width:1px; height:1px;
+  left:50%; top:50%;
+  animation:nubes 2s linear infinite;
+}
+
+@keyframes nubes{
+  50%{
+      box-shadow:
+
+    /* nubes */
+
+    -82px 59px 8px 5px rgba(255, 255, 255, 0.5),
+    -63px 52px 12px 10px rgba(236, 240, 241, 0.5),
+    -35px 63px 10px 15px rgba(236, 240, 241, 0.9),
+    -8px 58px 10px 20px rgba(255, 255, 255, 0.8),
+
+    112px 46px 10px 5px rgba(236, 240, 241, 0.5),
+    93px 58px 10px 10px rgba(255, 255, 255, 0.8),
+    68px 52px 10px 15px rgba(236, 240, 241, 0.5),
+    52px 61px 10px 20px rgba(255, 255, 255, 0.8);
+  }
+}
+
+.car:after{
+  background:rgb(46, 204, 113);
+  border-radius:100%;
+  box-shadow:1px 0px 20px 1px rgba(255, 255, 255, 0.3);
+  width:82px; height:78px;
+  left:50%; top:50%;
+  margin-top:17px; margin-left:-25px;
+  animation:rotar 1s linear infinite;
+}
+
+@keyframes rotar{
+  100%{
+    transform:rotateZ(360deg);
+  }
+}
+
+
+div.container {
+  text-align: center;
+  margin: 300px auto 0;
+}
+
+a {
+  display: inline-block;
+  background-color: #1984c3;
+  color: #fff;
+  font-size: 12px;
+  font-family: Courier, sans-serif;
+  padding: 1em 5em;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 0.5em;
+  border-bottom: 0.25em solid #0f5177;
+  -moz-transition: 0.1s;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+  box-shadow: 0 2px 3px #ccc;
+  position: relative;
+   margin-top:5px;
+}
+
+a:hover {
+  background-color: #1e9feb;
+  border-bottom-width: 0;
+  margin-top: 0.2em;
+}
+input[type=text]{
+    width:20%;
+    border:2px solid #aaa;
+    border-radius:4px;
+    margin-top:300px;
+ position: relative;
+    outline:none;
+    padding:8px;
+    box-sizing:border-box;
+    transition:.3s;
+  }
+
+  input[type=text]:focus{
+    border-color:dodgerBlue;
+    box-shadow:0 0 8px 0 dodgerBlue;
+  }
+input[type=submit]{
+    width:5%;
+    border:2px solid #aaa;
+    border-radius:4px;
+    margin:8px 0;
+    outline:none;
+    padding:8px;
+    box-sizing:border-box;
+    transition:.3s;
+  }
+
+  input[type=submit]:focus{
+    border-color:dodgerBlue;
+    box-shadow:0 0 8px 0 dodgerBlue;
+  }
+
+</style>
+</head>
+<body>
+<center>
+<h2> Delete user from Toll gate </h2>
+
+<table class="fixed_header" >
+    <thead>
+      <tr>
+
+				<th >Username</th>
+				<th >Password</th>
+				<th >Location</th>
+		  		<th >Lane</th>
+      </tr>
+    </thead>
+
+			<tbody>
+
+			{% for c in toll %}
+			<tr><td >{{c.username}}</td>
+				<td >{{c.password}}</td>
+				<td >{{c.location}}</td>
+				<td>{{c.lane}}</td>
+			</tr>
+			{% endfor %}
+			</tbody>
+		</table>
+	</center>
+<div class="car"></div>
+<form method="post" action="/registration/deleteuser/">
+    {% csrf_token %}
+<center><input type="text" name="del" >
+<input type="submit">
+</center></form>
+<center>
+<a href="/registration/getuser/">add user</a>
+<a href="/adminuser/loggedin/">Home</a>
+<a href="/adminuser/distcharge/">total amounts</a>
+<a href="/adminuser/logout/">logout</a>
+</center>
+</body>
+</html>
